@@ -10,10 +10,17 @@ import UIKit
 
 class QSUser: NSObject {
     
-    var userUrl: String = ""
-    var userName: String = ""
-    var email: String = ""
-    var groups: NSArray = []
+    var userUrl: String
+    var userName: String
+    var email: String
+    var groups: NSArray
+    
+    override init() {
+        self.userUrl = ""
+        self.userName = ""
+        self.email = ""
+        self.groups = []
+    }
     
     init(userUrl: String, userName: String, email: String, groups: NSArray) {
         self.userUrl = userUrl
@@ -22,10 +29,4 @@ class QSUser: NSObject {
         self.groups = NSArray(array: groups)
     }
     
-    override init() {
-        self.userUrl = ""
-        self.userName = ""
-        self.email = ""
-        self.groups = []
-    }
 }

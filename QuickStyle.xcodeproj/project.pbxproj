@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90A8A8EB1D1B8EE700D49163 /* QSShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8A8EA1D1B8EE700D49163 /* QSShop.swift */; };
+		90A8A8ED1D1B901C00D49163 /* QSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8A8EC1D1B901C00D49163 /* QSStyle.swift */; };
+		90A8A8EF1D1B908300D49163 /* QSAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8A8EE1D1B908300D49163 /* QSAppointment.swift */; };
 		90F5A9CE1D159DDB00074B03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F5A9CD1D159DDB00074B03 /* AppDelegate.swift */; };
 		90F5A9D01D159DDB00074B03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F5A9CF1D159DDB00074B03 /* ViewController.swift */; };
 		90F5A9D31D159DDB00074B03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F5A9D11D159DDB00074B03 /* Main.storyboard */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		90A8A8EA1D1B8EE700D49163 /* QSShop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSShop.swift; sourceTree = "<group>"; };
+		90A8A8EC1D1B901C00D49163 /* QSStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSStyle.swift; sourceTree = "<group>"; };
+		90A8A8EE1D1B908300D49163 /* QSAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSAppointment.swift; sourceTree = "<group>"; };
 		90F5A9CA1D159DDB00074B03 /* QuickStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F5A9CD1D159DDB00074B03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90F5A9CF1D159DDB00074B03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				90F5AA031D1912A900074B03 /* QSUser.swift */,
+				90A8A8EA1D1B8EE700D49163 /* QSShop.swift */,
+				90A8A8EC1D1B901C00D49163 /* QSStyle.swift */,
+				90A8A8EE1D1B908300D49163 /* QSAppointment.swift */,
 			);
 			path = "Data Model";
 			sourceTree = SOURCE_ROOT;
@@ -282,10 +291,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F5A9D01D159DDB00074B03 /* ViewController.swift in Sources */,
+				90A8A8EF1D1B908300D49163 /* QSAppointment.swift in Sources */,
 				90F5AA011D19108000074B03 /* QSDataService.swift in Sources */,
 				90F5A9FF1D16F8F800074B03 /* QSUserServices.swift in Sources */,
+				90A8A8EB1D1B8EE700D49163 /* QSShop.swift in Sources */,
 				90F5A9CE1D159DDB00074B03 /* AppDelegate.swift in Sources */,
 				90F5AA041D1912A900074B03 /* QSUser.swift in Sources */,
+				90A8A8ED1D1B901C00D49163 /* QSStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

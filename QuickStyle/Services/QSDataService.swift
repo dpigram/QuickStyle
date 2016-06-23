@@ -23,7 +23,7 @@ class QSDataService: NSObject {
      Entry point for all GET requests for records that return dictionaryies
      
      - parameter name:              name of the record to be requested
-     - parameter completionHandler: closure that executes after data had come back from server
+     - parameter completionHandler: closure that executes after data has come back from server
      */
     func requestDocument(name: String, completionHandler:QSDictionaryClosure) {
         let request = NSMutableURLRequest(URL: NSURL(string: "\(baseUrl)\(name)/")!)
