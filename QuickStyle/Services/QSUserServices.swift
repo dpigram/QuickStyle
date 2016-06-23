@@ -44,6 +44,15 @@ class QSUserServices: NSObject {
             completionHandler(data: content, error: error)
         }
     }
+    
+    func requestGroups(completionHandler:QSDictionaryClosure) {
+        dataService.requestDocument("groups") { (content, error) -> Void in
+            completionHandler(data: content, error: error)
+        }
+    }
+    
+    
+    
 }
 
 
