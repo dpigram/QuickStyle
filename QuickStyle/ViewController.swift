@@ -11,17 +11,18 @@ import UIKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        QSUserServices.sharedInstance.requestAllShops { (data, error) in
+            print(data)
+        }
         
+        QSUserServices.sharedInstance.requestAllUsers { (data, error) in
+            print(data)
+        }
+        super.viewDidLoad()
     }
 
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
-
-
 }
 

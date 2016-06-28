@@ -44,6 +44,12 @@ class QSUserServices: NSObject {
             completionHandler(data: content, error: error)
         }
     }
+    
+    func requestUserAuthentication(parameters: NSDictionary, completionHandler:QSDictionaryClosure){
+        dataService.postDocument("user/auth", parameters: parameters) { (content, error) in
+            completionHandler(data: content, error: error)
+        }
+    }
 }
 
 
