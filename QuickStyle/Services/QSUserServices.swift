@@ -22,7 +22,9 @@ class QSUserServices: NSObject {
      */
     func requestAllUsers(completionHandler:QSDictionaryClosure) {
         dataService.requestDocument("users") { (content, error) -> Void in
-            completionHandler(data: content, error: error)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                completionHandler(data: content, error: error)
+            })
         }
     }
     
@@ -33,7 +35,9 @@ class QSUserServices: NSObject {
      */
     func requestAllShops(completionHandler:QSDictionaryClosure) {
         dataService.requestDocument("shops") { (content, error) -> Void in
-            completionHandler(data: content, error: error)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                completionHandler(data: content, error: error)
+            })
         }
     }
     
@@ -44,7 +48,9 @@ class QSUserServices: NSObject {
      */
     func requestAllAppointments(completionHandler:QSDictionaryClosure) {
         dataService.requestDocument("appointments") { (content, error) -> Void in
-            completionHandler(data: content, error: error)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                completionHandler(data: content, error: error)
+            })
         }
     }
     
@@ -55,7 +61,10 @@ class QSUserServices: NSObject {
      */
     func requestAllStyles(completionHandler:QSDictionaryClosure) {
         dataService.requestDocument("styles") { (content, error) -> Void in
-            completionHandler(data: content, error: error)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                completionHandler(data: content, error: error)
+            })
+            
         }
     }
     
@@ -67,7 +76,9 @@ class QSUserServices: NSObject {
     func requestGroups(completionHandler:(groups: Array<QSGroup>, error: ErrorType?) -> Void) {
         dataService.requestDocument("groups") { (content, error) -> Void in
             let arrayOfGroups: Array<QSGroup> = self.mapJSONToGroupObjects(content)
-            completionHandler(groups: arrayOfGroups, error: error)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                completionHandler(groups: arrayOfGroups, error: error)
+            })
         }
     }
     
@@ -82,7 +93,7 @@ class QSUserServices: NSObject {
         // Is the content nil or are there any elements in the results array?
         guard let dict = content where dict.count > 0,
             let results: [[String: String]] = dict["results"] as? Array where results.count > 0 else {
-            //We don't have anything, so let just return an empty array
+            //We don't have anything, so lets just return an empty array
             return []
         }
         
