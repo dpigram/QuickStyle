@@ -49,30 +49,4 @@ class QSDataService: NSObject {
         }
         dataTask.resume()
     }
-    
-    func requestGroupsDocument(name: String, completionHandler:(content: NSDictionary, error: ErrorType, previousUrl: NSURL, nextURL: NSURL) -> Void) {
-        let request = NSMutableURLRequest(URL: NSURL(string: "\(baseUrl)\(name)/")!)
-        let session = NSURLSession.sharedSession()
-        request.HTTPMethod = "GET"
-        
-        let loginString = NSString(format: "%@:%@", userName, password)
-        let loginData: NSData = loginString.dataUsingEncoding(NSUTF8StringEncoding)!
-        let base64LoginString = loginData.base64EncodedStringWithOptions([])
-        request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-        
-        let dataTask = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
-            if data == nil {
-//                completionHandler(content: [:], error: error!)
-            } else {
-                do {
-                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
-                    print(json)
-                    completionHandler(content: json, error: nil)
-                }catch let error {
-                    completionHandler(content: [:], error: error)
-                }
-            }
-        }
-        dataTask.resume()
-    }
 }
