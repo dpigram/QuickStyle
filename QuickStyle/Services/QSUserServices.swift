@@ -78,19 +78,36 @@ class QSUserServices: NSObject {
      
      - returns: An array of QSGroupObjects
      */
-    func mapJSONToGroupObjects(content: NSDictionary?) -> Array<QSGroup> {
+    private func mapJSONToGroupObjects(content: NSDictionary?) -> Array<QSGroup> {
+        // Is the content nil or are there any elements in the results array?
         guard let dict = content where dict.count > 0,
             let results: [[String: String]] = dict["results"] as? Array where results.count > 0 else {
-            //no content()
+            //We don't have anything, so let just return an empty array
             return []
         }
         
+        //We have data
         var allGroups: Array<QSGroup> = Array()
+        
+        //Let's loop through and map the json object in to objects for the consuming application
         for group in results {
             allGroups.append(QSGroup(url: NSURL(string: group["url"]!)!, name: group["name"]!))
         }
         
+        //all done
         return allGroups
+    }
+
+    /**
+     Authenticates the user based on the credentials passed into the dictionary
+     
+     - parameter parameters:        dictionary that contains the user's credentials
+     - parameter completionHandler: executed among completion of the user authentication
+     */
+    func requestUserAuthentication(parameters: NSDictionary, completionHandler:QSDictionaryClosure){
+        dataService.postDocument("user/auth", parameters: parameters) { (content, error) in
+            completionHandler(data: content, error: error)
+        }
     }
 
 }

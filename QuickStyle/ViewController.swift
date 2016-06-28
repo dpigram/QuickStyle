@@ -17,13 +17,18 @@ class ViewController: UIViewController {
         us.requestGroups { (groups, error) -> Void in
             print(groups)
         }
+        QSUserServices.sharedInstance.requestAllShops { (data, error) in
+            print(data)
+        }
+        
+        QSUserServices.sharedInstance.requestAllUsers { (data, error) in
+            print(data)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
-
-
 }
 
