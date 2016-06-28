@@ -9,34 +9,34 @@
 import UIKit
 
 class QSGroup: NSObject {
-    var count: NSInteger
     
-    typealias QSResultClosure = (data: NSArray, error: ErrorType) -> Void
+/// url used to access information about the group
+    var url: NSURL?
     
+/// name of the group
+    var name: String?
+    
+    /**
+     initialized class with nil parameters
+     
+     - returns: an instance of QSGroup
+     */
     override init() {
-        self.count = 0
-    }
-    
-    init(count: NSInteger) {
-        self.count = count
-    }
-    
-    
-    /**
-     Requests the next X number of users
-     
-     - parameter completion: carries data from request to reciever
-     */
-    func requestNextUsers(completion:QSResultClosure){
-        
+        self.url = nil
+        self.name = nil
     }
     
     /**
-     Request the previous X number of users
+     initializes class with given values
      
-     - parameter completion: carries data from request to reciever
+     - parameter url:  url used to acces information abou tthe group
+     - parameter name: name of the group
+     
+     - returns: an instance of QSGroup
      */
-    func requestPrevious(completion:QSResultClosure){
-        
+    init(url: NSURL, name: String) {
+        self.url = url
+        self.name = name
     }
+    
 }

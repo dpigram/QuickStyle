@@ -12,11 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let us: QSUserServices = QSUserServices()
         
+        us.requestGroups { (groups, error) -> Void in
+            print(groups)
+        }
     }
 
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
