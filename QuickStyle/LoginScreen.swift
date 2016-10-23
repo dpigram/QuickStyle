@@ -26,10 +26,10 @@ class LoginScreen: UIViewController {
     
     
 
-    @IBAction func signInBtnTapped(sender: AnyObject) {
+    @IBAction func signInBtnTapped(_ sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let lookUpVC = storyboard.instantiateViewControllerWithIdentifier("QSGroupsLookUpViewController")
-        presentViewController(lookUpVC, animated: true, completion: nil)
+        let lookUpVC = storyboard.instantiateViewController(withIdentifier: "QSGroupsLookUpViewController")
+        present(lookUpVC, animated: true, completion: nil)
         
 //        QSUserServices.sharedInstance.requestUserAuthentication(["username": self.username.text!, "password":self.password.text!]) { (data, error) in
 //            print(data);
