@@ -117,13 +117,10 @@
 		90F5A9CC1D159DDB00074B03 /* QuickStyle */ = {
 			isa = PBXGroup;
 			children = (
+				90F5A9CD1D159DDB00074B03 /* AppDelegate.swift */,
 				D285DAB61D22157A006D17FE /* ViewControllers */,
 				90F5AA021D19129000074B03 /* Data Model */,
-				90F5A9CD1D159DDB00074B03 /* AppDelegate.swift */,
-				90F5A9CF1D159DDB00074B03 /* ViewController.swift */,
-				90F5A9D11D159DDB00074B03 /* Main.storyboard */,
 				90F5A9D41D159DDB00074B03 /* Assets.xcassets */,
-				90F5A9D61D159DDB00074B03 /* LaunchScreen.storyboard */,
 				90F5A9D91D159DDB00074B03 /* Info.plist */,
 				90F5A9FD1D16F8F800074B03 /* Services */,
 			);
@@ -174,6 +171,9 @@
 			children = (
 				D285DAB71D2216DF006D17FE /* LoginScreen.swift */,
 				D285DAB81D2216DF006D17FE /* LoginScreen.xib */,
+				90F5A9CF1D159DDB00074B03 /* ViewController.swift */,
+				90F5A9D11D159DDB00074B03 /* Main.storyboard */,
+				90F5A9D61D159DDB00074B03 /* LaunchScreen.storyboard */,
 				90BE16061D2303CF0092D8E9 /* QSGroupsLookUpViewController.swift */,
 			);
 			name = ViewControllers;
