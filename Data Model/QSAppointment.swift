@@ -9,19 +9,19 @@
 import UIKit
 
 class QSAppointment: NSObject {
-    var date: NSDate
+    var date: Date
     var customer: QSUser
     var style: QSStyle
     var barber: QSUser
     
     override init(){
-        self.date = NSDate()
+        self.date = Date()
         self.customer = QSUser()
         self.style = QSStyle()
         self.barber = QSUser()
     }
     
-    init(date: NSDate, customer: QSUser, style: QSStyle, barber:QSUser) {
+    init(date: Date, customer: QSUser, style: QSStyle, barber:QSUser) {
         self.date = date
         self.customer = customer
         self.style = style

@@ -11,7 +11,7 @@ import UIKit
 class QSGroup: NSObject {
     
 /// url used to access information about the group
-    var url: NSURL?
+    var url: URL?
     
 /// name of the group
     var name: String?
@@ -34,7 +34,7 @@ class QSGroup: NSObject {
      
      - returns: an instance of QSGroup
      */
-    init(url: NSURL, name: String) {
+    init(url: URL, name: String) {
         self.url = url
         self.name = name
     }
