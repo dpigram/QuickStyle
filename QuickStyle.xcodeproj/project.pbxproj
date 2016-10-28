@@ -22,8 +22,7 @@
 		90F5A9FF1D16F8F800074B03 /* QSUserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F5A9FE1D16F8F800074B03 /* QSUserServices.swift */; };
 		90F5AA011D19108000074B03 /* QSDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F5AA001D19108000074B03 /* QSDataService.swift */; };
 		90F5AA041D1912A900074B03 /* QSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F5AA031D1912A900074B03 /* QSUser.swift */; };
-		D285DAB91D2216DF006D17FE /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D285DAB71D2216DF006D17FE /* LoginScreen.swift */; };
-		D285DABA1D2216DF006D17FE /* LoginScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D285DAB81D2216DF006D17FE /* LoginScreen.xib */; };
+		D285DAB91D2216DF006D17FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D285DAB71D2216DF006D17FE /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +64,7 @@
 		90F5A9FE1D16F8F800074B03 /* QSUserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSUserServices.swift; sourceTree = "<group>"; };
 		90F5AA001D19108000074B03 /* QSDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDataService.swift; sourceTree = "<group>"; };
 		90F5AA031D1912A900074B03 /* QSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSUser.swift; sourceTree = "<group>"; };
-		D285DAB71D2216DF006D17FE /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
-		D285DAB81D2216DF006D17FE /* LoginScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginScreen.xib; sourceTree = "<group>"; };
+		D285DAB71D2216DF006D17FE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,10 +167,9 @@
 		D285DAB61D22157A006D17FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D285DAB71D2216DF006D17FE /* LoginScreen.swift */,
-				D285DAB81D2216DF006D17FE /* LoginScreen.xib */,
-				90F5A9CF1D159DDB00074B03 /* ViewController.swift */,
 				90F5A9D11D159DDB00074B03 /* Main.storyboard */,
+				D285DAB71D2216DF006D17FE /* LoginViewController.swift */,
+				90F5A9CF1D159DDB00074B03 /* ViewController.swift */,
 				90F5A9D61D159DDB00074B03 /* LaunchScreen.storyboard */,
 				90BE16061D2303CF0092D8E9 /* QSGroupsLookUpViewController.swift */,
 			);
@@ -287,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F5A9D81D159DDB00074B03 /* LaunchScreen.storyboard in Resources */,
-				D285DABA1D2216DF006D17FE /* LoginScreen.xib in Resources */,
 				90F5A9D51D159DDB00074B03 /* Assets.xcassets in Resources */,
 				90F5A9D31D159DDB00074B03 /* Main.storyboard in Resources */,
 			);
@@ -316,7 +312,7 @@
 			files = (
 				90F5A9D01D159DDB00074B03 /* ViewController.swift in Sources */,
 				90A8A8EF1D1B908300D49163 /* QSAppointment.swift in Sources */,
-				D285DAB91D2216DF006D17FE /* LoginScreen.swift in Sources */,
+				D285DAB91D2216DF006D17FE /* LoginViewController.swift in Sources */,
 				90F5AA011D19108000074B03 /* QSDataService.swift in Sources */,
 				90F5A9FF1D16F8F800074B03 /* QSUserServices.swift in Sources */,
 				90A8A8EB1D1B8EE700D49163 /* QSShop.swift in Sources */,
@@ -464,11 +460,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = QuickStyle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TD.QuickStyle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -476,11 +474,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = QuickStyle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TD.QuickStyle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
