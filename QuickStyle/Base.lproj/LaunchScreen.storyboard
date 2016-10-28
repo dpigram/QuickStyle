@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -17,12 +17,32 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logIn-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-Hd-dNN"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Styles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vd8-9X-c5f">
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Black" family="Snell Roundhand" pointSize="47"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vd8-9X-c5f" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Wqn-Xd-gbL"/>
+                            <constraint firstItem="qSM-Hd-dNN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="XFr-YZ-Kd6"/>
+                            <constraint firstItem="qSM-Hd-dNN" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="Yzk-7b-rcj"/>
+                            <constraint firstAttribute="trailing" secondItem="qSM-Hd-dNN" secondAttribute="trailing" id="qZY-HN-afs"/>
+                            <constraint firstItem="Vd8-9X-c5f" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xk3-xU-BJM"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qSM-Hd-dNN" secondAttribute="bottom" id="z4H-mg-Vai"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="395" y="422"/>
+            <point key="canvasLocation" x="394.39999999999998" y="421.43928035982015"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logIn-wallpaper" width="730" height="1095"/>
+    </resources>
 </document>
