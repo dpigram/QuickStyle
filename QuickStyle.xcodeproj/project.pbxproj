@@ -12,6 +12,11 @@
 		90A8A8EF1D1B908300D49163 /* QSAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8A8EE1D1B908300D49163 /* QSAppointment.swift */; };
 		90A8A8F11D1BA00200D49163 /* QSGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8A8F01D1BA00200D49163 /* QSGroup.swift */; };
 		90BE16071D2303CF0092D8E9 /* QSGroupsLookUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE16061D2303CF0092D8E9 /* QSGroupsLookUpViewController.swift */; };
+		90CFDECB1DC6487300D05B7A /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFDECA1DC6487300D05B7A /* HomeScreenViewController.swift */; };
+		90CFDECD1DC649B600D05B7A /* HomeScreenHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CFDECC1DC649B600D05B7A /* HomeScreenHeader.xib */; };
+		90CFDECF1DC649DC00D05B7A /* HomeScreenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFDECE1DC649DC00D05B7A /* HomeScreenHeader.swift */; };
+		90CFDED21DC69B6600D05B7A /* BarberDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFDED01DC69B6600D05B7A /* BarberDetailTableViewCell.swift */; };
+		90CFDED31DC69B6600D05B7A /* BarberDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CFDED11DC69B6600D05B7A /* BarberDetailTableViewCell.xib */; };
 		90F5A9CE1D159DDB00074B03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F5A9CD1D159DDB00074B03 /* AppDelegate.swift */; };
 		90F5A9D01D159DDB00074B03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F5A9CF1D159DDB00074B03 /* ViewController.swift */; };
 		90F5A9D31D159DDB00074B03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F5A9D11D159DDB00074B03 /* Main.storyboard */; };
@@ -48,6 +53,11 @@
 		90A8A8EE1D1B908300D49163 /* QSAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSAppointment.swift; sourceTree = "<group>"; };
 		90A8A8F01D1BA00200D49163 /* QSGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSGroup.swift; sourceTree = "<group>"; };
 		90BE16061D2303CF0092D8E9 /* QSGroupsLookUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSGroupsLookUpViewController.swift; sourceTree = "<group>"; };
+		90CFDECA1DC6487300D05B7A /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		90CFDECC1DC649B600D05B7A /* HomeScreenHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeScreenHeader.xib; sourceTree = "<group>"; };
+		90CFDECE1DC649DC00D05B7A /* HomeScreenHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenHeader.swift; sourceTree = "<group>"; };
+		90CFDED01DC69B6600D05B7A /* BarberDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarberDetailTableViewCell.swift; sourceTree = "<group>"; };
+		90CFDED11DC69B6600D05B7A /* BarberDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarberDetailTableViewCell.xib; sourceTree = "<group>"; };
 		90F5A9CA1D159DDB00074B03 /* QuickStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F5A9CD1D159DDB00074B03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90F5A9CF1D159DDB00074B03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +102,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90CFDEC91DC6485800D05B7A /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				90CFDECA1DC6487300D05B7A /* HomeScreenViewController.swift */,
+				90CFDECC1DC649B600D05B7A /* HomeScreenHeader.xib */,
+				90CFDECE1DC649DC00D05B7A /* HomeScreenHeader.swift */,
+				90CFDED01DC69B6600D05B7A /* BarberDetailTableViewCell.swift */,
+				90CFDED11DC69B6600D05B7A /* BarberDetailTableViewCell.xib */,
+			);
+			name = HomeScreen;
+			sourceTree = "<group>";
+		};
 		90F5A9C11D159DDB00074B03 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +189,7 @@
 		D285DAB61D22157A006D17FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				90CFDEC91DC6485800D05B7A /* HomeScreen */,
 				90F5A9D11D159DDB00074B03 /* Main.storyboard */,
 				D285DAB71D2216DF006D17FE /* LoginViewController.swift */,
 				90F5A9CF1D159DDB00074B03 /* ViewController.swift */,
@@ -285,7 +308,9 @@
 			files = (
 				90F5A9D81D159DDB00074B03 /* LaunchScreen.storyboard in Resources */,
 				90F5A9D51D159DDB00074B03 /* Assets.xcassets in Resources */,
+				90CFDED31DC69B6600D05B7A /* BarberDetailTableViewCell.xib in Resources */,
 				90F5A9D31D159DDB00074B03 /* Main.storyboard in Resources */,
+				90CFDECD1DC649B600D05B7A /* HomeScreenHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,9 +340,12 @@
 				D285DAB91D2216DF006D17FE /* LoginViewController.swift in Sources */,
 				90F5AA011D19108000074B03 /* QSDataService.swift in Sources */,
 				90F5A9FF1D16F8F800074B03 /* QSUserServices.swift in Sources */,
+				90CFDECB1DC6487300D05B7A /* HomeScreenViewController.swift in Sources */,
+				90CFDED21DC69B6600D05B7A /* BarberDetailTableViewCell.swift in Sources */,
 				90A8A8EB1D1B8EE700D49163 /* QSShop.swift in Sources */,
 				90F5A9CE1D159DDB00074B03 /* AppDelegate.swift in Sources */,
 				90BE16071D2303CF0092D8E9 /* QSGroupsLookUpViewController.swift in Sources */,
+				90CFDECF1DC649DC00D05B7A /* HomeScreenHeader.swift in Sources */,
 				90A8A8F11D1BA00200D49163 /* QSGroup.swift in Sources */,
 				90F5AA041D1912A900074B03 /* QSUser.swift in Sources */,
 				90A8A8ED1D1B901C00D49163 /* QSStyle.swift in Sources */,

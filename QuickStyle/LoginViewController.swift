@@ -27,27 +27,33 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInBtnTapped(_ sender: AnyObject) {
         QSUserServices.sharedInstance.requestUserAuthentication(["username": self.username.text!, "password":self.password.text!]) { (data, error) in
-            
             if let status: String = data["status"] as? String {
                 DispatchQueue.main.async(execute: {
                     if status == "success" {
-                        self.successLabel.isHidden = false;
-                        self.successLabel.textColor = UIColor.green;
-                        self.successLabel.text = "Success!"
+                        self.displayStatus(status: true)
+                        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let homeScreen: HomeScreenViewController = storyboard.instantiateViewController(withIdentifier: "HomeScreen") as! HomeScreenViewController
+                        let navController: UINavigationController = UINavigationController(rootViewController: homeScreen)
+                        self.present(navController, animated: true, completion: nil)
+                        
+                        //bruh!
+                        
                     } else {
-                        self.successLabel.isHidden = false;
-                        self.successLabel.textColor = UIColor.red;
-                        self.successLabel.text = "Failure!"
+                        self.displayStatus(status: false)
                     }
                 })
             } else {
                 DispatchQueue.main.async(execute: {
-                    self.successLabel.isHidden = false;
-                    self.successLabel.textColor = UIColor.red;
-                    self.successLabel.text = "Failure!"
+                    self.displayStatus(status: false)
                 })
             }
             
         }
+    }
+    
+    func displayStatus(status: Bool) -> Void {
+        self.successLabel.isHidden = !status;
+        self.successLabel.textColor = status ? UIColor.green : UIColor.red;
+        self.successLabel.text = status ? "Success!" : "Failure"
     }
 }
