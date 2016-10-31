@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
     }
     
     func displayStatus(status: Bool) -> Void {
-        self.successLabel.isHidden = !status;
+        self.successLabel.isHidden = false;
         self.successLabel.textColor = status ? UIColor.green : UIColor.red;
         self.successLabel.text = status ? "Success!" : "Failure"
     }
