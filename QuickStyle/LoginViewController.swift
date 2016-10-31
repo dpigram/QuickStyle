@@ -34,10 +34,8 @@ class LoginViewController: UIViewController {
                         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         let homeScreen: HomeScreenViewController = storyboard.instantiateViewController(withIdentifier: "HomeScreen") as! HomeScreenViewController
                         let navController: UINavigationController = UINavigationController(rootViewController: homeScreen)
-                        self.present(navController, animated: true, completion: nil)
-                        
-                        //bruh!
-                        
+                        navController.hidesBarsOnSwipe = true
+                        self.present(navController, animated: true, completion: nil) 
                     } else {
                         self.displayStatus(status: false)
                     }
