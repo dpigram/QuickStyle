@@ -1,0 +1,6 @@
+framework module Pods_QuickStyle {
+  umbrella header "Pods-QuickStyle-umbrella.h"
+
+  export *
+  module * { export * }
+}

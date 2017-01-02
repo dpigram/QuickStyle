@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import MMDrawerController
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var leftNavButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         let tableHeaderView: HomeScreenHeader = headerFromNib()
@@ -47,5 +48,12 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func leftNavButtonTapped(_ sender: Any) {
+        let appDelegete: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        appDelegete.centerContainer?.toggle(.left, animated: true, completion: nil);
+    }
+    
+    
 }

@@ -7,20 +7,34 @@
 //
 
 import UIKit
-
+import MMDrawerController
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var centerContainer: MMDrawerController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//        let viewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "LogIn")
+//        self.window?.rootViewController = viewController
+//        self.window?.makeKeyAndVisible()
         
-        let viewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "LogIn")
-        self.window?.rootViewController = viewController
-        self.window?.makeKeyAndVisible()
+        
+        let leftViewController = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController;
+        let centerViewController = storyboard.instantiateViewController(withIdentifier: "HomeScreen") as! HomeScreenViewController;
+        
+        let leftNav = UINavigationController(rootViewController: leftViewController);
+        let centerNav = UINavigationController(rootViewController: centerViewController);
+        
+        centerContainer = MMDrawerController.init(center: centerNav, leftDrawerViewController: leftNav);
+        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView;
+        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView;
+        
+        window!.rootViewController = centerContainer;
+        window!.makeKeyAndVisible();
         
         return true
     }

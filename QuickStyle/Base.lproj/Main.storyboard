@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bDY-dX-t52">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -178,11 +178,71 @@
                             <constraint firstItem="jjP-7o-3Wq" firstAttribute="top" secondItem="Pab-oC-BBv" secondAttribute="bottom" id="uuL-6g-EPg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="NeQ-AU-XDc">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="eh8-gB-hWG">
+                            <connections>
+                                <action selector="leftNavButtonTapped:" destination="Vpi-hz-p0y" id="KOW-Cc-lle"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="leftNavButton" destination="eh8-gB-hWG" id="vj5-xc-26a"/>
                         <outlet property="tableView" destination="Pab-oC-BBv" id="ZxK-yn-Zgf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiX-15-wDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4101.6000000000004" y="-17.541229385307346"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="hSG-c3-aUx">
+            <objects>
+                <viewController storyboardIdentifier="FavoritesViewController" id="SA0-PM-VPn" customClass="FavoritesViewController" customModule="QuickStyle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MdQ-cd-GtW"/>
+                        <viewControllerLayoutGuide type="bottom" id="uuc-5B-Sus"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h87-8f-K2Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6I9-E8-IQS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SA0-PM-VPn" id="m6v-od-GgC"/>
+                                    <outlet property="delegate" destination="SA0-PM-VPn" id="HST-dv-n1o"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6I9-E8-IQS" firstAttribute="top" secondItem="h87-8f-K2Q" secondAttribute="top" id="6rv-xo-Q3p"/>
+                            <constraint firstAttribute="trailing" secondItem="6I9-E8-IQS" secondAttribute="trailing" id="HfT-xi-leq"/>
+                            <constraint firstItem="6I9-E8-IQS" firstAttribute="leading" secondItem="h87-8f-K2Q" secondAttribute="leading" id="M2D-o4-xqU"/>
+                            <constraint firstItem="6I9-E8-IQS" firstAttribute="bottom" secondItem="uuc-5B-Sus" secondAttribute="top" id="uY6-8h-MK1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w5U-5q-4Wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4744.8000000000002" y="-18.440779610194905"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4e7-NL-qHI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4vm-iM-52j" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="stB-M8-f2V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vpi-hz-p0y" kind="relationship" relationship="rootViewController" id="dP0-tK-4XH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hdd-PV-TKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3162.4000000000001" y="-17.541229385307346"/>
         </scene>
