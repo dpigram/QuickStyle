@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MMDrawerController
 
 class LoginViewController: UIViewController {
 
@@ -14,9 +15,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var successLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -31,11 +32,10 @@ class LoginViewController: UIViewController {
                 DispatchQueue.main.async(execute: {
                     if status == "success" {
                         self.displayStatus(status: true)
-                        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let homeScreen: HomeScreenViewController = storyboard.instantiateViewController(withIdentifier: "HomeScreen") as! HomeScreenViewController
-                        let navController: UINavigationController = UINavigationController(rootViewController: homeScreen)
-                        navController.hidesBarsOnSwipe = true
-                        self.present(navController, animated: true, completion: nil) 
+                        let appDelegete: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                        UserDefaults.standard.set(true, forKey: "loggedIn")
+                        UserDefaults.standard.synchronize();
+                        self.present(appDelegete.centerContainer!, animated: true, completion: nil)
                     } else {
                         self.displayStatus(status: false)
                     }

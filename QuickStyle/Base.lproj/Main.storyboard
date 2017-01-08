@@ -209,6 +209,24 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6I9-E8-IQS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="n6h-b6-y8K">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEk-Yi-u4G">
+                                            <rect key="frame" x="160" y="7" width="55" height="30"/>
+                                            <state key="normal" title="Log Out"/>
+                                            <connections>
+                                                <action selector="LogoutButtonTapped:" destination="SA0-PM-VPn" eventType="touchUpInside" id="RHa-gs-OQJ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="iEk-Yi-u4G" firstAttribute="centerX" secondItem="n6h-b6-y8K" secondAttribute="centerX" id="VbG-zm-wjf"/>
+                                        <constraint firstItem="iEk-Yi-u4G" firstAttribute="centerY" secondItem="n6h-b6-y8K" secondAttribute="centerY" id="phX-H6-eed"/>
+                                    </constraints>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="SA0-PM-VPn" id="m6v-od-GgC"/>
                                     <outlet property="delegate" destination="SA0-PM-VPn" id="HST-dv-n1o"/>
@@ -217,10 +235,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6I9-E8-IQS" firstAttribute="top" secondItem="h87-8f-K2Q" secondAttribute="top" id="6rv-xo-Q3p"/>
-                            <constraint firstAttribute="trailing" secondItem="6I9-E8-IQS" secondAttribute="trailing" id="HfT-xi-leq"/>
-                            <constraint firstItem="6I9-E8-IQS" firstAttribute="leading" secondItem="h87-8f-K2Q" secondAttribute="leading" id="M2D-o4-xqU"/>
-                            <constraint firstItem="6I9-E8-IQS" firstAttribute="bottom" secondItem="uuc-5B-Sus" secondAttribute="top" id="uY6-8h-MK1"/>
+                            <constraint firstItem="6I9-E8-IQS" firstAttribute="top" secondItem="h87-8f-K2Q" secondAttribute="top" id="GQw-Ca-tIJ"/>
+                            <constraint firstItem="6I9-E8-IQS" firstAttribute="leading" secondItem="h87-8f-K2Q" secondAttribute="leading" id="bBp-W0-TRN"/>
+                            <constraint firstAttribute="trailing" secondItem="6I9-E8-IQS" secondAttribute="trailing" id="cuy-Ze-AsW"/>
+                            <constraint firstItem="6I9-E8-IQS" firstAttribute="bottom" secondItem="uuc-5B-Sus" secondAttribute="top" id="zjH-kK-XJ8"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -228,12 +246,12 @@
             </objects>
             <point key="canvasLocation" x="4744.8000000000002" y="-18.440779610194905"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller View Controller-->
         <scene sceneID="4e7-NL-qHI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4vm-iM-52j" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationControllerViewController" automaticallyAdjustsScrollViewInsets="NO" id="4vm-iM-52j" customClass="MainNavigationControllerViewController" customModule="QuickStyle" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="stB-M8-f2V">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="stB-M8-f2V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

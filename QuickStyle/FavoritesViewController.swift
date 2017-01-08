@@ -13,6 +13,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Favorites"
+        self.view.backgroundColor = .lightGray
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +21,17 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func LogoutButtonTapped(_ sender: Any) {
+        // setting loggedIn flag
+        UserDefaults.standard.set(false, forKey: "loggedIn");
+        UserDefaults.standard.synchronize()
+        NotificationCenter.default.post(name: NSNotification.Name("QSAuthenticationChanged"), object: nil);
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.centerContainer?.toggle(.left, animated: true, completion: nil);
+        
+        
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2

@@ -17,11 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//        let viewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "LogIn")
-//        self.window?.rootViewController = viewController
-//        self.window?.makeKeyAndVisible()
-        
         
         let leftViewController = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController;
         let centerViewController = storyboard.instantiateViewController(withIdentifier: "HomeScreen") as! HomeScreenViewController;
@@ -33,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView;
         centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView;
         
-        window!.rootViewController = centerContainer;
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LogIn");
+        window!.rootViewController = loginViewController;
         window!.makeKeyAndVisible();
         
         return true

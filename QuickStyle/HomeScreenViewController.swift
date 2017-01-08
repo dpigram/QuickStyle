@@ -24,8 +24,19 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         
+        NotificationCenter.default.addObserver(self, selector: #selector(showloginScreen), name: NSNotification.Name(rawValue: "QSAuthenticationChanged"), object: nil)
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.showloginScreen();
+    }
+    
+    func showloginScreen(){
+        if !UserDefaults.standard.bool(forKey: "loggedIn") {
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }
+    }
     func headerFromNib() -> HomeScreenHeader {
         return UINib(nibName: "HomeScreenHeader", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! HomeScreenHeader
     }
