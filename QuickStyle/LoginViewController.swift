@@ -39,13 +39,13 @@ class LoginViewController: UIViewController {
                     } else {
                         self.displayStatus(status: false)
                     }
+                
                 })
             } else {
                 DispatchQueue.main.async(execute: {
                     self.displayStatus(status: false)
                 })
             }
-            
         }
     }
     

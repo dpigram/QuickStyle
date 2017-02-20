@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView;
         
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "LogIn");
-        window!.rootViewController = loginViewController;
+        window!.rootViewController = loginViewController
         window!.makeKeyAndVisible();
         
         return true

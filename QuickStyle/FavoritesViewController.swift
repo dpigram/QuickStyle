@@ -54,6 +54,8 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell();
+        cell.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
+        cell.textLabel?.textColor = UIColor.white
         switch indexPath.section {
         case 0:
             cell.textLabel?.text = "Barber \(indexPath.row)"
@@ -62,6 +64,14 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Futura", size: 16);
+        header.textLabel?.textColor = UIColor.white
+        header.contentView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1);
+        
     }
     /*
     // MARK: - Navigation
