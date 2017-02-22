@@ -13,6 +13,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var leftNavButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tableHeaderView: HomeScreenHeader = headerFromNib()
@@ -47,6 +48,10 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BarberDetailTableViewCell", for: indexPath) as! BarberDetailTableViewCell
+        
+        if indexPath.row % 2 != 0 {
+            cell.backgroundColor = UIColor.init(white: 0.8, alpha: 0.5)
+        }
 
         return cell
     }
