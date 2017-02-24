@@ -8,13 +8,14 @@
 
 import UIKit
 
-class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
+class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     public var data: AnyObject?
     @IBOutlet weak var dateCollectionView: UICollectionView!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
+    
     override func awakeFromNib() {
-        print("working");
+        self.dateCollectionView.register(HomeScreenHeaderCollectionViewCell.self, forCellWithReuseIdentifier: "HomeScreenHeaderCollectionViewCell")
     }
     public func loadData(data: AnyObject?) {
         // update ui
@@ -25,7 +26,7 @@ class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeScreenHeaderCollectionViewCell", for: indexPath)
         
         if(indexPath.row % 2 == 0){
             cell.backgroundColor = UIColor.red
@@ -39,5 +40,11 @@ class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
-    } 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+
+    }
+    
 }

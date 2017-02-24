@@ -24,6 +24,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.register(UINib(nibName: "BarberDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "BarberDetailTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
+
         
         NotificationCenter.default.addObserver(self, selector: #selector(showloginScreen), name: NSNotification.Name(rawValue: "QSAuthenticationChanged"), object: nil)
     }
@@ -38,6 +39,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             self.navigationController?.dismiss(animated: true, completion: nil)
         }
     }
+    
     func headerFromNib() -> HomeScreenHeader {
         return UINib(nibName: "HomeScreenHeader", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! HomeScreenHeader
     }
@@ -47,10 +49,13 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "BarberDetailTableViewCell", for: indexPath) as! BarberDetailTableViewCell
         
         if indexPath.row % 2 != 0 {
             cell.backgroundColor = UIColor.init(white: 0.8, alpha: 0.5)
+        } else {
+            cell.backgroundColor = UIColor.init(white: 1.0, alpha: 1)
         }
 
         return cell
