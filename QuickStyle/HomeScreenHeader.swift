@@ -16,6 +16,9 @@ class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDele
     
     override func awakeFromNib() {
         self.dateCollectionView.register(HomeScreenHeaderCollectionViewCell.self, forCellWithReuseIdentifier: "HomeScreenHeaderCollectionViewCell")
+        self.leftButton.setTitle("left", for: .normal)
+        self.rightButton.setTitle("right", for: .normal)
+        self.leftButton.isHidden = true
     }
     public func loadData(data: AnyObject?) {
         // update ui
@@ -45,6 +48,37 @@ class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
 
+    }
+    
+    @IBAction func letfBtnTapped(_ sender: Any) {
+        let visibleItems = self.dateCollectionView.indexPathsForVisibleItems
+        let currentItem = visibleItems[0]
+        if(currentItem.item != 0){
+            self.leftButton.isHidden = false;
+            let nextItem = NSIndexPath(item:currentItem.item - 1, section: currentItem.section)
+            self.dateCollectionView.scrollToItem(at: nextItem as IndexPath, at: .centeredHorizontally, animated: true)
+            self.rightButton.isHidden = false;
+        }
+        else{
+            self.leftButton.isHidden = true
+        }
+        
+        
+    }
+    
+    @IBAction func rightBtnTapped(_ sender: Any) {
+        
+        let visibleItems = self.dateCollectionView.indexPathsForVisibleItems
+        let currentItem = visibleItems[0]
+        if(self.dateCollectionView.numberOfItems(inSection: 0) > currentItem.item + 1){
+            let nextItem = NSIndexPath(item:currentItem.item + 1, section: currentItem.section)
+            self.dateCollectionView.scrollToItem(at: nextItem as IndexPath, at: .centeredHorizontally, animated: true)
+            self.leftButton.isHidden = false;
+            if(currentItem.item + 1 > self.dateCollectionView.numberOfItems(inSection: 0)){
+                self.rightButton.isHidden = true
+            }
+        }
+        
     }
     
 }
