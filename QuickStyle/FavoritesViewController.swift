@@ -8,8 +8,10 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FavoritesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var profilePictureImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Favorites"
@@ -73,14 +75,19 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         header.contentView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1);
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let choseImage: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        self.profilePictureImageView.image = choseImage
+        picker.dismiss(animated: true, completion: nil)
+        //TODO: save image to documents folder
     }
-    */
+    
+    @IBAction func profilePictureTapped(_ sender: Any) {
+        let imagePickerController: UIImagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
 
 }

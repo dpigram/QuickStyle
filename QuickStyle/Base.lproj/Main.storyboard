@@ -209,8 +209,30 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6I9-E8-IQS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="n6h-b6-y8K">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Jd6-ws-Ryy" userLabel="HeaderView">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-photo" translatesAutoresizingMaskIntoConstraints="NO" id="80n-zY-GkI">
+                                            <rect key="frame" x="123" y="26" width="128" height="128"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="UG0-Cg-axa"/>
+                                                <constraint firstAttribute="width" constant="128" id="pqv-zb-ufc"/>
+                                            </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="8C0-HK-CIV" appends="YES" id="v4v-In-4gg"/>
+                                            </connections>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="80n-zY-GkI" firstAttribute="centerY" secondItem="Jd6-ws-Ryy" secondAttribute="centerY" id="4BF-Dg-Lvr"/>
+                                        <constraint firstItem="80n-zY-GkI" firstAttribute="centerX" secondItem="Jd6-ws-Ryy" secondAttribute="centerX" id="qE9-fB-2FF"/>
+                                    </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="n6h-b6-y8K" userLabel="FooterView">
+                                    <rect key="frame" x="0.0" y="180" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEk-Yi-u4G">
@@ -241,8 +263,16 @@
                             <constraint firstItem="6I9-E8-IQS" firstAttribute="bottom" secondItem="uuc-5B-Sus" secondAttribute="top" id="zjH-kK-XJ8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="profilePictureImageView" destination="80n-zY-GkI" id="gva-GE-abY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5U-5q-4Wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8C0-HK-CIV">
+                    <connections>
+                        <action selector="profilePictureTapped:" destination="SA0-PM-VPn" id="5Ra-Qr-KcS"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4744.8000000000002" y="-18.440779610194905"/>
         </scene>
@@ -267,5 +297,6 @@
     </scenes>
     <resources>
         <image name="logIn-wallpaper" width="730" height="1095"/>
+        <image name="no-photo" width="300" height="425"/>
     </resources>
 </document>
