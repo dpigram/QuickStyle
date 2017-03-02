@@ -10,9 +10,11 @@ import UIKit
 
 class HomeScreenHeaderCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var dayNumberLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.dayNumberLbl.text = "testing"
     }
 
 }

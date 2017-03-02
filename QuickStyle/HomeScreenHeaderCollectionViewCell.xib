@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,8 +17,27 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="379" height="264"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTx-S4-079">
+                        <rect key="frame" x="164" y="107" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="5tE-hJ-y3b"/>
+                            <constraint firstAttribute="width" constant="50" id="PVn-gR-2gW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="ZTx-S4-079" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="e7b-oF-cdL"/>
+                <constraint firstItem="ZTx-S4-079" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="raE-BW-9TM"/>
+            </constraints>
             <size key="customSize" width="306" height="133"/>
+            <connections>
+                <outlet property="dayNumberLbl" destination="ZTx-S4-079" id="a1A-6J-ugI"/>
+            </connections>
             <point key="canvasLocation" x="69" y="95"/>
         </collectionViewCell>
     </objects>

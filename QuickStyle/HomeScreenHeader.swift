@@ -15,7 +15,7 @@ class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDele
     @IBOutlet weak var rightButton: UIButton!
     
     override func awakeFromNib() {
-        self.dateCollectionView.register(HomeScreenHeaderCollectionViewCell.self, forCellWithReuseIdentifier: "HomeScreenHeaderCollectionViewCell")
+        self.dateCollectionView.register(UINib.init(nibName: "HomeScreenHeaderCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeScreenHeaderCollectionViewCell")
         self.leftButton.setTitle("left", for: .normal)
         self.rightButton.setTitle("right", for: .normal)
         self.leftButton.isHidden = true
@@ -29,20 +29,15 @@ class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeScreenHeaderCollectionViewCell", for: indexPath)
         
-        if(indexPath.row % 2 == 0){
-            cell.backgroundColor = UIColor.red
-        }
-        else{
-            cell.backgroundColor = UIColor.blue
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeScreenHeaderCollectionViewCell", for: indexPath) as! HomeScreenHeaderCollectionViewCell
         
+        cell.dayNumberLbl.text = "23"
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -54,16 +49,19 @@ class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDele
         let visibleItems = self.dateCollectionView.indexPathsForVisibleItems
         let currentItem = visibleItems[0]
         if(currentItem.item != 0){
-            self.leftButton.isHidden = false;
+            
             let nextItem = NSIndexPath(item:currentItem.item - 1, section: currentItem.section)
             self.dateCollectionView.scrollToItem(at: nextItem as IndexPath, at: .centeredHorizontally, animated: true)
-            self.rightButton.isHidden = false;
-        }
-        else{
-            self.leftButton.isHidden = true
+            self.showOrHideButtonsDirectionButtons(indexPath: nextItem)
         }
         
         
+        
+    }
+    
+    func showOrHideButtonsDirectionButtons(indexPath: NSIndexPath){
+        self.leftButton.isHidden = (indexPath.item == 0) ? true : false
+        self.rightButton.isHidden = (indexPath.item + 1 == self.dateCollectionView.numberOfItems(inSection: 0)) ? true : false
     }
     
     @IBAction func rightBtnTapped(_ sender: Any) {
@@ -73,10 +71,7 @@ class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDele
         if(self.dateCollectionView.numberOfItems(inSection: 0) > currentItem.item + 1){
             let nextItem = NSIndexPath(item:currentItem.item + 1, section: currentItem.section)
             self.dateCollectionView.scrollToItem(at: nextItem as IndexPath, at: .centeredHorizontally, animated: true)
-            self.leftButton.isHidden = false;
-            if(currentItem.item + 1 > self.dateCollectionView.numberOfItems(inSection: 0)){
-                self.rightButton.isHidden = true
-            }
+            self.showOrHideButtonsDirectionButtons(indexPath: nextItem)
         }
         
     }
