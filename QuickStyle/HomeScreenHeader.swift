@@ -28,11 +28,21 @@ class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDele
         return 1
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let visibleItems = self.dateCollectionView.indexPathsForVisibleItems
+        let currentITem = visibleItems[0]
+        self.showOrHideButtonsDirectionButtons(indexPath: currentITem as NSIndexPath)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeScreenHeaderCollectionViewCell", for: indexPath) as! HomeScreenHeaderCollectionViewCell
         
-        cell.dayNumberLbl.text = "23"
+        let date = NSDate()
+        let myCalendar = Calendar.current
+        
+        let day = myCalendar.component(.day, from: date as Date)
+        cell.dayNumberLbl.text = String(day + indexPath.item)
         return cell
     }
     
