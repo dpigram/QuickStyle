@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var successLabel: UILabel!
-    
+    private let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,9 @@ class LoginViewController: UIViewController {
                     if status == "success" {
                         self.displayStatus(status: true)
                         let appDelegete: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                        UserDefaults.standard.set(true, forKey: "loggedIn")
-                        UserDefaults.standard.synchronize();
+                        self.userDefaults.set(true, forKey: "loggedIn")
+                        self.userDefaults.set(self.username.text, forKey: "loggedInUserName")
+                        self.userDefaults.synchronize();
                         self.present(appDelegete.centerContainer!, animated: true, completion: nil)
                     } else {
                         self.displayStatus(status: false)

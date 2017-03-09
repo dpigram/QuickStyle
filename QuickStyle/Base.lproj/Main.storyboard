@@ -213,8 +213,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-photo" translatesAutoresizingMaskIntoConstraints="NO" id="80n-zY-GkI">
-                                            <rect key="frame" x="123" y="26" width="128" height="128"/>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-photo" translatesAutoresizingMaskIntoConstraints="NO" id="80n-zY-GkI">
+                                            <rect key="frame" x="123" y="15" width="128" height="128"/>
                                             <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="128" id="UG0-Cg-axa"/>
@@ -224,11 +224,22 @@
                                                 <outletCollection property="gestureRecognizers" destination="8C0-HK-CIV" appends="YES" id="v4v-In-4gg"/>
                                             </connections>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEA-Vi-R4K">
+                                            <rect key="frame" x="166" y="151" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="50d-9B-jzg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="80n-zY-GkI" firstAttribute="centerY" secondItem="Jd6-ws-Ryy" secondAttribute="centerY" id="4BF-Dg-Lvr"/>
-                                        <constraint firstItem="80n-zY-GkI" firstAttribute="centerX" secondItem="Jd6-ws-Ryy" secondAttribute="centerX" id="qE9-fB-2FF"/>
+                                        <constraint firstItem="80n-zY-GkI" firstAttribute="centerX" secondItem="Jd6-ws-Ryy" secondAttribute="centerX" id="2RN-a6-ciU"/>
+                                        <constraint firstItem="NEA-Vi-R4K" firstAttribute="centerX" secondItem="Jd6-ws-Ryy" secondAttribute="centerX" id="9qf-Ga-Nqf"/>
+                                        <constraint firstItem="NEA-Vi-R4K" firstAttribute="top" secondItem="80n-zY-GkI" secondAttribute="bottom" constant="8" id="uCY-iE-Qhe"/>
+                                        <constraint firstItem="80n-zY-GkI" firstAttribute="top" secondItem="Jd6-ws-Ryy" secondAttribute="top" constant="15" id="vXw-VM-kvh"/>
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="n6h-b6-y8K" userLabel="FooterView">
@@ -264,6 +275,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="displayNamelabel" destination="NEA-Vi-R4K" id="xK7-Dd-bnc"/>
                         <outlet property="profilePictureImageView" destination="80n-zY-GkI" id="gva-GE-abY"/>
                     </connections>
                 </viewController>

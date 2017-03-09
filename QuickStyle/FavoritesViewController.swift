@@ -7,22 +7,36 @@
 //
 
 import UIKit
+import QuartzCore
 
 class FavoritesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var displayNamelabel: UILabel!
+    
+    private let userDefaults = UserDefaults.standard
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Favorites"
         self.view.backgroundColor = .lightGray
+        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.displayNamelabel.text = self.userDefaults.value(forKey: "loggedInUserName") as? String ?? ""
+        self.profilePictureImageView.backgroundColor = UIColor.darkGray
+        self.profilePictureImageView.clipsToBounds = true
+        self.profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.size.width / 2
+        self.profilePictureImageView.layer.borderWidth = 2
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     @IBAction func LogoutButtonTapped(_ sender: Any) {
         // setting loggedIn flag
@@ -31,8 +45,6 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         NotificationCenter.default.post(name: NSNotification.Name("QSAuthenticationChanged"), object: nil);
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.centerContainer?.toggle(.left, animated: true, completion: nil);
-        
-        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,12 +80,16 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.appDelegate.centerContainer?.closeDrawer(animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont(name: "Futura", size: 16);
         header.textLabel?.textColor = UIColor.white
         header.contentView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1);
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
