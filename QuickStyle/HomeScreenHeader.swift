@@ -41,6 +41,7 @@ class HomeScreenHeader: UIView, UICollectionViewDataSource, UICollectionViewDele
         let date = NSDate()
         let myCalendar = Calendar.current
         
+        
         let day = myCalendar.component(.day, from: date as Date)
         cell.dayNumberLbl.text = String(day + indexPath.item)
         return cell
