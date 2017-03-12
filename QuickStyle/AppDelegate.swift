@@ -12,21 +12,21 @@ import MMDrawerController
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var centerContainer: MMDrawerController?
+    var drawerController: MMDrawerController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         let leftViewController = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController;
-        let centerViewController = storyboard.instantiateViewController(withIdentifier: "HomeScreen") as! HomeScreenViewController;
+        let centerViewController = storyboard.instantiateViewController(withIdentifier: "BarberHomeScreen") as! BarberHomeScreenViewController;
         
         let leftNav = UINavigationController(rootViewController: leftViewController);
         let centerNav = UINavigationController(rootViewController: centerViewController);
         
-        centerContainer = MMDrawerController.init(center: centerNav, leftDrawerViewController: leftNav);
-        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView;
-        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView;
+        drawerController = MMDrawerController.init(center: centerNav, leftDrawerViewController: leftNav);
+        drawerController!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView;
+        drawerController!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView;
         
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "LogIn");
         window!.rootViewController = loginViewController

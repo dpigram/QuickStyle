@@ -44,7 +44,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         UserDefaults.standard.synchronize()
         NotificationCenter.default.post(name: NSNotification.Name("QSAuthenticationChanged"), object: nil);
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.centerContainer?.toggle(.left, animated: true, completion: nil);
+        appDelegate.drawerController?.toggle(.left, animated: true, completion: nil);
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,7 +82,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.appDelegate.centerContainer?.closeDrawer(animated: true, completion: nil)
+        self.appDelegate.drawerController?.closeDrawer(animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

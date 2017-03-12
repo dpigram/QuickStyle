@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
                         self.userDefaults.set(true, forKey: "loggedIn")
                         self.userDefaults.set(self.username.text, forKey: "loggedInUserName")
                         self.userDefaults.synchronize();
-                        self.present(appDelegete.centerContainer!, animated: true, completion: nil)
+                        self.present(appDelegete.drawerController!, animated: true, completion: nil)
                     } else {
                         self.displayStatus(status: false)
                     }
