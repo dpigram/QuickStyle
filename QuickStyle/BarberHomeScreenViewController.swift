@@ -15,7 +15,7 @@ class BarberHomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.green
+        self.view.backgroundColor = UIColor.black
         // Do any additional setup after loading the view.
     }
 
