@@ -165,49 +165,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qig-wu-Vwu" userLabel="CalendarView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="134"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mjP-1f-1en">
-                                        <rect key="frame" x="0.0" y="55" width="375" height="58"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="HsQ-XO-35N"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qf0-lq-xeG">
-                                            <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XKU-xf-ToU">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-f7-YYu">
-                                        <rect key="frame" x="8" y="26" width="359" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="134" id="5qq-zd-RgS"/>
-                                    <constraint firstAttribute="bottom" secondItem="mjP-1f-1en" secondAttribute="bottom" constant="21" id="Pmt-Im-zrS"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YUL-ja-f8P">
-                                <rect key="frame" x="0.0" y="198" width="375" height="469"/>
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="mSE-3l-J6n"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ttK-Z0-k7K">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -225,16 +188,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qig-wu-Vwu" userLabel="CalendarView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="532"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Qig-wu-Vwu" firstAttribute="top" secondItem="yJS-al-Z32" secondAttribute="bottom" id="BIp-hq-mg5"/>
-                            <constraint firstItem="jjP-7o-3Wq" firstAttribute="top" secondItem="YUL-ja-f8P" secondAttribute="bottom" id="CwJ-x7-yNT"/>
-                            <constraint firstItem="YUL-ja-f8P" firstAttribute="top" secondItem="Qig-wu-Vwu" secondAttribute="bottom" id="HkD-Yd-yla"/>
-                            <constraint firstItem="Qig-wu-Vwu" firstAttribute="leading" secondItem="sZN-Eu-WiZ" secondAttribute="leading" id="IrZ-fA-m6w"/>
-                            <constraint firstAttribute="trailing" secondItem="Qig-wu-Vwu" secondAttribute="trailing" id="V8b-pS-ldg"/>
-                            <constraint firstItem="YUL-ja-f8P" firstAttribute="leading" secondItem="sZN-Eu-WiZ" secondAttribute="leading" id="b3Q-xI-KpG"/>
-                            <constraint firstAttribute="trailing" secondItem="YUL-ja-f8P" secondAttribute="trailing" id="vsH-Gq-vGd"/>
+                            <constraint firstItem="YUL-ja-f8P" firstAttribute="top" secondItem="Qig-wu-Vwu" secondAttribute="bottom" constant="1" id="3Fr-uF-2p6"/>
+                            <constraint firstItem="YUL-ja-f8P" firstAttribute="bottom" secondItem="jjP-7o-3Wq" secondAttribute="top" id="INC-B2-H9n"/>
+                            <constraint firstAttribute="trailing" secondItem="Qig-wu-Vwu" secondAttribute="trailing" id="KG3-NY-54v"/>
+                            <constraint firstItem="Qig-wu-Vwu" firstAttribute="top" secondItem="yJS-al-Z32" secondAttribute="bottom" id="UEn-sP-8nB"/>
+                            <constraint firstItem="Qig-wu-Vwu" firstAttribute="leading" secondItem="sZN-Eu-WiZ" secondAttribute="leading" id="aM6-TF-35X"/>
+                            <constraint firstItem="Qig-wu-Vwu" firstAttribute="trailing" secondItem="YUL-ja-f8P" secondAttribute="trailing" id="bvQ-wK-NVx"/>
+                            <constraint firstItem="Qig-wu-Vwu" firstAttribute="leading" secondItem="YUL-ja-f8P" secondAttribute="leading" id="n02-Bt-HEc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NeQ-AU-XDc">
