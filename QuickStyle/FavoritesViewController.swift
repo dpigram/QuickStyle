@@ -21,7 +21,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Favorites"
-        self.view.backgroundColor = .lightGray
+        self.view.backgroundColor = .clear
         
     }
 
@@ -30,7 +30,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         self.profilePictureImageView.backgroundColor = UIColor.darkGray
         self.profilePictureImageView.clipsToBounds = true
         self.profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.size.width / 2
-        self.profilePictureImageView.layer.borderWidth = 2
+        self.profilePictureImageView.layer.borderWidth = 3
     }
     
     override func didReceiveMemoryWarning() {

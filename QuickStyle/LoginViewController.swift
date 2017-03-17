@@ -27,27 +27,34 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signInBtnTapped(_ sender: AnyObject) {
-        QSUserServices.sharedInstance.requestUserAuthentication(["username": self.username.text!, "password":self.password.text!]) { (data, error) in
-            if let status: String = data["status"] as? String {
-                DispatchQueue.main.async(execute: {
-                    if status == "success" {
-                        self.displayStatus(status: true)
-                        let appDelegete: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                        self.userDefaults.set(true, forKey: "loggedIn")
-                        self.userDefaults.set(self.username.text, forKey: "loggedInUserName")
-                        self.userDefaults.synchronize();
-                        self.present(appDelegete.drawerController!, animated: true, completion: nil)
-                    } else {
-                        self.displayStatus(status: false)
-                    }
-                
-                })
-            } else {
-                DispatchQueue.main.async(execute: {
-                    self.displayStatus(status: false)
-                })
-            }
-        }
+        self.displayStatus(status: true)
+        let appDelegete: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.userDefaults.set(true, forKey: "loggedIn")
+        self.userDefaults.set(self.username.text, forKey: "loggedInUserName")
+        self.userDefaults.synchronize();
+        self.present(appDelegete.drawerController!, animated: true, completion: nil)
+        
+//        QSUserServices.sharedInstance.requestUserAuthentication(["username": self.username.text!, "password":self.password.text!]) { (data, error) in
+//            if let status: String = data["status"] as? String {
+//                DispatchQueue.main.async(execute: {
+//                    if status == "success" {
+//                        self.displayStatus(status: true)
+//                        let appDelegete: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+//                        self.userDefaults.set(true, forKey: "loggedIn")
+//                        self.userDefaults.set(self.username.text, forKey: "loggedInUserName")
+//                        self.userDefaults.synchronize();
+//                        self.present(appDelegete.drawerController!, animated: true, completion: nil)
+//                    } else {
+//                        self.displayStatus(status: false)
+//                    }
+//                
+//                })
+//            } else {
+//                DispatchQueue.main.async(execute: {
+//                    self.displayStatus(status: false)
+//                })
+//            }
+//        }
     }
     
     func displayStatus(status: Bool) -> Void {

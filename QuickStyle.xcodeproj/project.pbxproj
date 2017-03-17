@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		58F3E0421E710B7800A58CC1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F3E0411E710B7800A58CC1 /* QuartzCore.framework */; };
 		58F3E0461E74F6A600A58CC1 /* BarberHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F3E0451E74F6A600A58CC1 /* BarberHomeScreenViewController.swift */; };
+		58F3E04D1E7B8A8500A58CC1 /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F3E04B1E7B8A8500A58CC1 /* TimeCollectionViewCell.swift */; };
+		58F3E04E1E7B8A8500A58CC1 /* TimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F3E04C1E7B8A8500A58CC1 /* TimeCollectionViewCell.xib */; };
 		635189C1FD376AA88F944B47 /* Pods_QuickStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6233B641216562DA44BDA659 /* Pods_QuickStyle.framework */; };
 		90A8A8EB1D1B8EE700D49163 /* QSShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8A8EA1D1B8EE700D49163 /* QSShop.swift */; };
 		90A8A8ED1D1B901C00D49163 /* QSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8A8EC1D1B901C00D49163 /* QSStyle.swift */; };
@@ -53,6 +55,8 @@
 		5589D83CA5F2832C9E93617D /* Pods-QuickStyleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickStyleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickStyleUITests/Pods-QuickStyleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		58F3E0411E710B7800A58CC1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		58F3E0451E74F6A600A58CC1 /* BarberHomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarberHomeScreenViewController.swift; sourceTree = "<group>"; };
+		58F3E04B1E7B8A8500A58CC1 /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		58F3E04C1E7B8A8500A58CC1 /* TimeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeCollectionViewCell.xib; sourceTree = "<group>"; };
 		5C695536C15947B320BD3640 /* Pods-QuickStyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickStyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickStyle/Pods-QuickStyle.release.xcconfig"; sourceTree = "<group>"; };
 		6233B641216562DA44BDA659 /* Pods_QuickStyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EECCD47BD3CC8B9CBBB241C /* Pods_QuickStyleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStyleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				58F3E0451E74F6A600A58CC1 /* BarberHomeScreenViewController.swift */,
+				58F3E04B1E7B8A8500A58CC1 /* TimeCollectionViewCell.swift */,
+				58F3E04C1E7B8A8500A58CC1 /* TimeCollectionViewCell.xib */,
 			);
 			name = HomeScreens;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F5A9D81D159DDB00074B03 /* LaunchScreen.storyboard in Resources */,
+				58F3E04E1E7B8A8500A58CC1 /* TimeCollectionViewCell.xib in Resources */,
 				90F5A9D51D159DDB00074B03 /* Assets.xcassets in Resources */,
 				90F5A9D31D159DDB00074B03 /* Main.storyboard in Resources */,
 			);
@@ -526,6 +533,7 @@
 				90A8A8F11D1BA00200D49163 /* QSGroup.swift in Sources */,
 				90F5AA041D1912A900074B03 /* QSUser.swift in Sources */,
 				D201AB7E1E5A877800434118 /* FavoritesViewController.swift in Sources */,
+				58F3E04D1E7B8A8500A58CC1 /* TimeCollectionViewCell.swift in Sources */,
 				58F3E0461E74F6A600A58CC1 /* BarberHomeScreenViewController.swift in Sources */,
 				90A8A8ED1D1B901C00D49163 /* QSStyle.swift in Sources */,
 			);
