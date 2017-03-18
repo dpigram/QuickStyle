@@ -68,7 +68,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell();
-        cell.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
+        cell.backgroundColor = UIColor.clear
         cell.textLabel?.textColor = UIColor.white
         switch indexPath.section {
         case 0:

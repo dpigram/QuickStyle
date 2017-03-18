@@ -291,9 +291,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logIn-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="yks-JY-xt2" userLabel="backgroundImage">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cUs-ZF-GNm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="z37-Gl-0cG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6I9-E8-IQS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Jd6-ws-Ryy" userLabel="HeaderView">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -319,7 +331,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="80n-zY-GkI" firstAttribute="centerX" secondItem="Jd6-ws-Ryy" secondAttribute="centerX" id="2RN-a6-ciU"/>
                                         <constraint firstItem="NEA-Vi-R4K" firstAttribute="centerX" secondItem="Jd6-ws-Ryy" secondAttribute="centerX" id="9qf-Ga-Nqf"/>
@@ -339,7 +351,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="iEk-Yi-u4G" firstAttribute="centerX" secondItem="n6h-b6-y8K" secondAttribute="centerX" id="VbG-zm-wjf"/>
                                         <constraint firstItem="iEk-Yi-u4G" firstAttribute="centerY" secondItem="n6h-b6-y8K" secondAttribute="centerY" id="phX-H6-eed"/>
@@ -354,11 +366,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6I9-E8-IQS" firstAttribute="top" secondItem="h87-8f-K2Q" secondAttribute="top" id="GQw-Ca-tIJ"/>
+                            <constraint firstItem="yks-JY-xt2" firstAttribute="top" secondItem="MdQ-cd-GtW" secondAttribute="bottom" constant="-20" id="XwG-0e-gS6"/>
                             <constraint firstItem="6I9-E8-IQS" firstAttribute="leading" secondItem="h87-8f-K2Q" secondAttribute="leading" id="bBp-W0-TRN"/>
                             <constraint firstAttribute="trailing" secondItem="6I9-E8-IQS" secondAttribute="trailing" id="cuy-Ze-AsW"/>
+                            <constraint firstItem="yks-JY-xt2" firstAttribute="leading" secondItem="h87-8f-K2Q" secondAttribute="leadingMargin" constant="-16" id="lls-xK-cGO"/>
+                            <constraint firstItem="uuc-5B-Sus" firstAttribute="top" secondItem="yks-JY-xt2" secondAttribute="bottom" id="ojN-eA-7cV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yks-JY-xt2" secondAttribute="trailing" constant="-16" id="ykX-mU-97y"/>
                             <constraint firstItem="6I9-E8-IQS" firstAttribute="bottom" secondItem="uuc-5B-Sus" secondAttribute="top" id="zjH-kK-XJ8"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="displayNamelabel" destination="NEA-Vi-R4K" id="xK7-Dd-bnc"/>
                         <outlet property="profilePictureImageView" destination="80n-zY-GkI" id="gva-GE-abY"/>
