@@ -11,7 +11,11 @@ import UIKit
 class BarberHomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var timeCollectionView: UICollectionView!
-    @IBOutlet weak var leftNavButton: UIBarButtonItem!
+    
+    @IBOutlet weak var leftNavButton: UIButton!
+    
+    @IBOutlet weak var gradientView: UIView!
+    
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var arrOfTimes: [String] = ["7:00 am", "8:00 am", "9:00 am", "10:00am", "11:00 am", "7:00 am", "7:00 am", "7:00 am", "7:00 am"]
     override func viewDidLoad() {
@@ -24,6 +28,8 @@ class BarberHomeScreenViewController: UIViewController, UICollectionViewDelegate
         self.timeCollectionView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
         self.timeCollectionView.backgroundColor = UIColor.clear
         self.automaticallyAdjustsScrollViewInsets = false
+        self.navigationController?.isNavigationBarHidden = true
+        self.configureGradientView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +52,13 @@ class BarberHomeScreenViewController: UIViewController, UICollectionViewDelegate
         return self.arrOfTimes.count
     }
 
+    func configureGradientView() -> Void {
+        let gradient =  CAGradientLayer()
+        gradient.frame = CGRect(x: 0, y: 0, width: self.gradientView.frame.size.width, height: self.gradientView.frame.size.height)
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        self.gradientView.layer.insertSublayer(gradient, at: 0)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 50, height: 50)
     }
