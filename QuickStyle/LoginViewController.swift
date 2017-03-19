@@ -9,7 +9,7 @@
 import UIKit
 import MMDrawerController
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -61,5 +61,10 @@ class LoginViewController: UIViewController {
         self.successLabel.isHidden = false;
         self.successLabel.textColor = status ? UIColor.green : UIColor.red;
         self.successLabel.text = status ? "Success!" : "Failure"
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.signInBtnTapped(textField)
+        return true
     }
 }
