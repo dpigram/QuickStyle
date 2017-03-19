@@ -31,6 +31,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         self.profilePictureImageView.clipsToBounds = true
         self.profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.size.width / 2
         self.profilePictureImageView.layer.borderWidth = 3
+        self.profilePictureImageView.layer.borderColor = UIColor.white.cgColor
     }
     
     override func didReceiveMemoryWarning() {

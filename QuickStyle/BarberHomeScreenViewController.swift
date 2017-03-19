@@ -52,6 +52,16 @@ class BarberHomeScreenViewController: UIViewController, UICollectionViewDelegate
         return self.arrOfTimes.count
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let alertView: UIAlertController = UIAlertController(title: "Book for \(self.arrOfTimes[indexPath.row])?", message: "Your baber will be sent a notification that your appointment is reserved.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertView.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertView.addAction(cancelAction)
+        self.present(alertView, animated: true, completion: nil)
+        
+    }
+    
     func configureGradientView() -> Void {
         let gradient =  CAGradientLayer()
         gradient.frame = CGRect(x: 0, y: 0, width: self.gradientView.frame.size.width, height: self.gradientView.frame.size.height)
