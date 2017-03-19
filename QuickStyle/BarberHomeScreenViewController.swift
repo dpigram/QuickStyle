@@ -38,7 +38,7 @@ class BarberHomeScreenViewController: UIViewController, UICollectionViewDelegate
     }
     
     @IBAction func leftNavButtonTapped(_ sender: Any) {
-        self.appDelegate.drawerController?.open(.left, animated: true, completion: nil)
+        self.appDelegate.drawerController?.toggle(.left, animated: true, completion: nil)
     }
     
     //UICollectionView Delegate Methods
