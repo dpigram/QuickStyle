@@ -29,6 +29,7 @@ class BarberHomeScreenViewController: UIViewController, UICollectionViewDelegate
         self.timeCollectionView.backgroundColor = UIColor.clear
         self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.isNavigationBarHidden = true
+        self.configureGradientViewConstriants()
         self.configureGradientView()
     }
 
@@ -62,9 +63,18 @@ class BarberHomeScreenViewController: UIViewController, UICollectionViewDelegate
         
     }
     
+    func configureGradientViewConstriants() {
+        let top = NSLayoutConstraint(item: self.gradientView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
+        let bottom = NSLayoutConstraint(item: self.gradientView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
+        let left = NSLayoutConstraint(item: self.gradientView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
+        let right = NSLayoutConstraint(item: self.gradientView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
+        
+        self.view.addConstraints([top, bottom, left, right])
+    }
+    
     func configureGradientView() -> Void {
         let gradient =  CAGradientLayer()
-        gradient.frame = CGRect(x: 0, y: 0, width: self.gradientView.frame.size.width, height: self.gradientView.frame.size.height)
+        gradient.frame = CGRect(x: 0, y: self.view.frame.size.height / 2, width: self.view.frame.size.width, height: self.view.frame.size.height / 2)
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         self.gradientView.layer.insertSublayer(gradient, at: 0)
     }
